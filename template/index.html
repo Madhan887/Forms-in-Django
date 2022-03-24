@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <script src="{% static 'script.js' %}"></script>
+    
+    <h2>Registration Form</h2>
+    <form method='POST' onsubmit="return valid()" > <!-- without return we can't validate form -->
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td><label>First Name</label></td>
+                <td><input type="text" id="First" name="First_Name"><span></span></td>
+            </tr>
+
+            <tr>
+                <td><label>Last Name</label></td>
+                <td><input type="text" id="Last" name="Last_Name"><span></span></td>
+            </tr>
+
+             <tr>
+                <td><label>User name</label></td>
+                <td><input type="text" id="User" name="User_Name"><span></span></td>
+            </tr>
+
+            <tr>
+                <td><label>Mobile number</label></td>
+                <td><input type="number" id="Mobile" name="Mobile_number"><span></span></td>
+            </tr>
+
+            <tr>
+                <td><label>Email</label></td>
+                <td><input type="email" id="Email" name="Email">
+                    {% for message in messages %}
+                    <strong>{{message}}</strong>
+                    {% endfor %}</td>
+            </tr>
+
+            <tr>
+                <td><label>Password</label></td>
+                <td><input type="password" name="Password" id="pass"><span></span></td>
+            </tr>
+
+            <tr>
+                <td><label>Confirm Password</label></td>
+                <td><input type="password" id="cpass"><span></span></td>
+            </tr>
+
+            <tr>
+                <td colspan="2" id="pad"><input type="submit"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

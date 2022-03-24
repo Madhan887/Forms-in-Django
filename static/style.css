@@ -1,0 +1,19 @@
+span{
+    font-weight: bold;
+    color:red
+}
+body{
+    background-color: aqua;
+}
+h2,h1{
+    text-align: center;
+}
+table{
+    padding-left: 520px;
+}
+#pad{
+    padding-left: 100px;
+}
+strong{
+    color:red;
+}
